@@ -26,7 +26,7 @@ app.use(cors(
 // using routes
 
 app.use("/api/v1/users",userRouter);
-app.use("/tasks",taskRouter);
+app.use("/api/v1/tasks",taskRouter);
 
 app.get("/",(req,res)=>{
     res.send("Nice2")
