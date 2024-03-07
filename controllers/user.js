@@ -57,20 +57,14 @@ export const login  = async(req,res,next)=>{
     next(error)    
     }
 }
-
-export const getMyProfile  = async(req,res)=>{
-
-    try {
-        res.json({
-            success:true,
-            message:"success",
-            user:req.user
-        })
-    } catch (error) {
-        next(error)
-    }
+export const getMyProfile = (req, res) => {
+    res.status(200).json({
+      success: true,
+      user: req.user,
+    });
+  };
    
-}
+
 
 export const logout = (req,res)=>{
 
