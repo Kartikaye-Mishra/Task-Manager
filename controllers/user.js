@@ -47,10 +47,8 @@ export const login  = async(req,res,next)=>{
    
     const is_matched = await bcrypt.compare(password,user.password);
     if(!is_matched){
-       return res.json({
-                success:false,
-                message:"Invalid Password"
-        })
+     
+        return next(new ErrorHandler("Invalid Password",401))
     }
     
         sendCookie(res,user,`Welcome ${user.name}`,200)
